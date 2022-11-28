@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff;
+    background-image: radial-gradient( ellipse farthest-corner at 10px 10px , #f6f6f6, #f6f6f6 50%, #ffffff 50%);
+    background-size: 10px 10px; 
+    display:flex;
+    min-height: 100vh;
+}
+
+.form{
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px -5px rgb(0 0 0) / 30%;
+    margin: auto;
+    max-width: 400px;
+    padding: 4.5em 3em;
+    text-align: center;
+    width: 90%;
+
+}
+.form-title{
+    font-size: 2em;
+    margin-bottom: .5em;
+}
+.parrafo{
+    font-weight: 300;
+}
+.link{
+    font-weight:400;
+    color: #000;
+}
+.form-container{
+    margin-top: 3em;
+    display: grid;
+    gap: 2.5em;
+}
+.form-group{
+    position: relative;
+    --color:#5757577e;
+}
+.form-input{
+    background: none;
+    border:none;
+    border-bottom: 1px solid var(--color);
+    color:#706c6c;
+    font-size:1rem;
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    padding: .6em .3em;
+    width:100%;
+}
+.form-input:focus +.form-label, .form-input:not(:placeholder-shown)+ .form-label{
+    transform: translateY(-12px) scale(.7);
+    transform-origin: left top;
+    color: #3866f2;
+
+}
+.form-label{
+    color: var(--color);
+    cursor: pointer;
+    position: absolute;
+    top:0;
+    left:5px;
+    transform: translateY(10px);
+    transition: transform .5s, color .3s;
+}
+.submit{
+    background: #3866f2;
+    border:none;
+    border-radius: .5em;
+    color:#fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    padding: .8em 0;
+}
+.form-line{
+    background: #3866f2;
+    position:absolute;
+    bottom:0;
+    left:0;
+    height: 1px;
+    width: 100%;
+    transform: scale(0);
+    transform: left bottom;
+    transition:transform .4s;
+}
+
+.form-input:focus ~.form-line, .form-input:not(:placeholder-shown)~ .form-line{
+    transform: scale(1);
+}
+@media (max-width:425px) {
+    .form-title{
+        font-size: 1.8rem;
+    }
+}
